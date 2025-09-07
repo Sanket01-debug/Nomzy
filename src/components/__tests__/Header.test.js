@@ -1,11 +1,11 @@
 import { fireEvent, render, screen } from "@testing-library/react";
+import Header from "../Header";
 import { Provider } from "react-redux";
 import appStore from "../../utils/appStore";
-import Header from "../Header";
 import { BrowserRouter } from "react-router-dom";
 import "@testing-library/jest-dom";
 
-it("Should render Header Component with a login button", () => {
+it("should render Header component with login button", () => {
   render(
     <BrowserRouter>
       <Provider store={appStore}>
@@ -15,13 +15,11 @@ it("Should render Header Component with a login button", () => {
   );
 
   const loginButton = screen.getByRole("button", { name: "Login" });
-
-  //const loginButton = screen.getByText("Login");
-
+  //const loginButton = screen.getByText("Login")
   expect(loginButton).toBeInTheDocument();
 });
 
-it("Should render Header Component with a Cart items 0 ", () => {
+it("should render Header component with login button", () => {
   render(
     <BrowserRouter>
       <Provider store={appStore}>
@@ -30,12 +28,12 @@ it("Should render Header Component with a Cart items 0 ", () => {
     </BrowserRouter>
   );
 
-  const cartItems = screen.getByText("Cart - (0 items)");
-
+  const cartItems = screen.getByText("Cart (0 - Items)");
+  //const loginButton = screen.getByText("Login")
   expect(cartItems).toBeInTheDocument();
 });
 
-it("Should render Header Component with a Cart item ", () => {
+it("should render Header component with login button", () => {
   render(
     <BrowserRouter>
       <Provider store={appStore}>
@@ -44,12 +42,12 @@ it("Should render Header Component with a Cart item ", () => {
     </BrowserRouter>
   );
 
-  const cartItems = screen.getByText(/Cart/);
-
-  expect(cartItems).toBeInTheDocument();
+  const cartName = screen.getByText(/Cart /);
+  //const loginButton = screen.getByText("Login")
+  expect(cartName).toBeInTheDocument();
 });
 
-it("Should change Login Button to Logout on click", () => {
+it("should change login button to logout on click", () => {
   render(
     <BrowserRouter>
       <Provider store={appStore}>
@@ -61,7 +59,6 @@ it("Should change Login Button to Logout on click", () => {
   const loginButton = screen.getByRole("button", { name: "Login" });
 
   fireEvent.click(loginButton);
-
   const logoutButton = screen.getByRole("button", { name: "Logout" });
 
   expect(logoutButton).toBeInTheDocument();

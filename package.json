@@ -1,7 +1,7 @@
 {
   "name": "namaste-react",
   "version": "1.0.0",
-  "description": "This is Namaste React by Akshay Saini",
+  "description": "This is react",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
@@ -10,37 +10,33 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/namastedev/namaste-react.git"
+    "url": "git+https://github.com/Sanket01-debug/Nomzy.git"
   },
-  "keywords": [],
-  "author": "Akshay Saini",
+  "author": "Sanket",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/namastedev/namaste-react/issues"
+    "url": "https://github.com/Sanket01-debug/Nomzy/issues"
   },
-  "homepage": "https://github.com/namastedev/namaste-react#readme",
+  "homepage": "https://github.com/Sanket01-debug/Nomzy#readme",
   "devDependencies": {
-    "@babel/core": "^7.22.9",
-    "@babel/preset-env": "^7.22.9",
-    "@babel/preset-react": "^7.22.5",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^14.0.0",
-    "babel-jest": "^29.6.2",
-    "jest": "^29.6.2",
-    "jest-environment-jsdom": "^29.6.2",
-    "parcel": "^2.8.3",
-    "postcss": "^8.4.24",
-    "process": "^0.11.10",
-    "tailwindcss": "^3.3.2"
+    "@babel/core": "^7.28.3",
+    "@babel/preset-env": "^7.28.3",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.8.0",
+    "@testing-library/react": "^16.3.0",
+    "babel-jest": "^30.0.5",
+    "jest": "^30.0.5",
+    "jest-environment-jsdom": "^30.0.5",
+    "parcel": "^2.15.4"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^1.9.5",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-redux": "^8.1.1",
-    "react-router-dom": "^6.11.2"
-  },
-  "browserslist": [
-    "last 2 versions"
-  ]
+    "@babel/preset-react": "^7.27.1",
+    "@reduxjs/toolkit": "^2.8.2",
+    "@tailwindcss/postcss": "^4.1.13",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^6.11.2",
+    "tailwindcss": "^4.1.11"
+  }
 }

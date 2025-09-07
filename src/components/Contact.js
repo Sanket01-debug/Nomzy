@@ -5,19 +5,20 @@ const Contact = () => {
       <form>
         <input
           type="text"
-          className=" border border-black p-2 m-2"
+          className="border border-black p-2 m-2"
           placeholder="name"
         />
         <input
           type="text"
-          className=" border border-black p-2 m-2"
+          className="border border-black p-2 m-2"
           placeholder="message"
         />
-        <button className=" border border-black p-2 m-2 bg-gray-100 rounded-lg">
+        <button className="border border-black p-2 m-2 bg-gray-100 rounded-lg ">
           Submit
         </button>
       </form>
     </div>
   );
 };
+
 export default Contact;

@@ -2,38 +2,25 @@ import React, { lazy, Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
-//import About from "./components/About";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import UserContext from "./utils/UserContext";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
 import Cart from "./components/Cart";
+// import Grocery from "./components/Grocery";
 
-
-//import Grocery from "./components/Grocery";
-
-// Chunking
-// Code Splitting
-// Dynamic Bundling
-// lazy Loading
-// on demand loading
-// dynamix imoprt
-
-const Grocery = lazy(() => import("./components/Grocery"));
-
-const About = lazy(() => import("./components/About"));
+//Config-Driven
 
 const AppLayout = () => {
   const [userName, setUserName] = useState();
 
-  //authentication
   useEffect(() => {
-    // Make an API call and send username and password
     const data = {
-      name: "Akshay Saini",
+      name: "Sanket",
     };
     setUserName(data.name);
   }, []);
@@ -50,6 +37,8 @@ const AppLayout = () => {
   );
 };
 
+const Grocery = lazy(() => import("./components/Grocery"));
+
 const appRouter = createBrowserRouter([
   {
     path: "/",
@@ -61,11 +50,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/about",
-        element: (
-          <Suspense fallback={<h1>Loading....</h1>}>
-            <About />
-          </Suspense>
-        ),
+        element: <About />,
       },
       {
         path: "/contact",
@@ -75,7 +60,8 @@ const appRouter = createBrowserRouter([
         path: "/grocery",
         element: (
           <Suspense fallback={<h1>Loading....</h1>}>
-            <Grocery />
+            {" "}
+            <Grocery />{" "}
           </Suspense>
         ),
       },
@@ -84,9 +70,9 @@ const appRouter = createBrowserRouter([
         element: <RestaurantMenu />,
       },
       {
-        path: "/cart",
-        element: <Cart />,
-      },
+        path : "/cart",
+        element : <Cart />
+      }
     ],
     errorElement: <Error />,
   },
